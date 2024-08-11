@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join or Create Chat Room</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="join-create-container">
+    <h1>Join or Create Chat Room</h1>
+    
+     <!-- Create Room Section -->
+
+    <div>
+      <h2>Create Room</h2>
+      <input id="create-room-name" type="text" placeholder="Enter room name" />
+      <input id="create-room-password" type="password" placeholder="Enter password" />
+      <button id="create-room">Create Room</button>
+    </div>
+    
+      <!-- Join Room Section -->
+
+    <div>
+      <h2>Join Room</h2>
+      <input id="join-room-name" type="text" placeholder="Enter room name" />
+      <input id="join-room-password" type="password" placeholder="Enter password" />
+      <button id="join-room">Join Room</button>
+    </div>
+  </div>
+  
+  <script>
+    document.getElementById('create-room').addEventListener('click', () => {
+      const roomName = document.getElementById('create-room-name').value;
+      const roomPassword = document.getElementById('create-room-password').value;
+      if (roomName && roomPassword) {
+        localStorage.setItem('roomName', roomName);
+        localStorage.setItem('roomPassword', roomPassword);
+        window.location.href = 'chat.html?action=create';
+      }
+    });
+
+    document.getElementById('join-room').addEventListener('click', () => {
+      const roomName = document.getElementById('join-room-name').value;
+      const roomPassword = document.getElementById('join-room-password').value;
+      if (roomName && roomPassword) {
+        localStorage.setItem('roomName', roomName);
+        localStorage.setItem('roomPassword', roomPassword);
+        window.location.href = 'chat.html?action=join';
+      }
+    });
+  </script>
+</body>
+</html>
