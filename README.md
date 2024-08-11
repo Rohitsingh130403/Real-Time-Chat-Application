@@ -38,7 +38,8 @@ Node.js installed on your machine. You can download it from nodejs.org.
 
 Installation To set up and run the project on your local machine, follow these steps:
 
-Clone the repository: git clone https://github.com/yourusername/realtime-chat-app.git
+Clone the repository:
+
 
 Navigate to the project directory:
 
